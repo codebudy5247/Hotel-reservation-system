@@ -31,6 +31,9 @@ export class User {
   @prop({ unique: true, required: true })
   email: string;
 
+  @prop({default:'https://mui.com/static/images/avatar/2.jpg'})
+  avatar:string
+
   @prop({ required: true, minlength: 8, maxLength: 32, select: false })
   password: string;
 
