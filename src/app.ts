@@ -1,20 +1,21 @@
-require('dotenv').config();
-import express, { NextFunction, Request, Response } from 'express';
-import morgan from 'morgan';
-import config from 'config';
-import cors from 'cors';
-import path from 'path'
-import cookieParser from 'cookie-parser';
-import connectDB from './utils/connectDB';
-import userRouter from './routes/user.route';
-import authRouter from './routes/auth.route';
+require("dotenv").config();
+import express, { NextFunction, Request, Response } from "express";
+import morgan from "morgan";
+import config from "config";
+import cors from "cors";
+import path from "path";
+import cookieParser from "cookie-parser";
+import connectDB from "./utils/connectDB";
+import userRouter from "./routes/user.route";
+import authRouter from "./routes/auth.route";
+import hotelRouter from "./routes/hotel.route";
 
 const app = express();
 
 // Middleware
 
 // Body Parser
-app.use(express.json({ limit: '10kb' }));
+app.use(express.json({ limit: "10kb" }));
 
 // Cookie Parser
 app.use(cookieParser());
@@ -22,31 +23,32 @@ app.use(cookieParser());
 // Cors
 app.use(
   cors({
-    origin: config.get<string>('origin'),
+    origin: config.get<string>("origin"),
     credentials: true,
   })
 );
 
 // Logger
-if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
+if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 // Routes
-app.use('/api/users', userRouter);
-app.use('/api/auth', authRouter);
+app.use("/api/users", userRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/hotel", hotelRouter);
 
 // Testing
 app.get(
-  '/api/healthChecker',
+  "/api/healthChecker",
   (req: Request, res: Response, next: NextFunction) => {
     res.status(200).json({
-      status: 'success',
-      message: 'Welcome to BookIt😂😂👈👈',
+      status: "success",
+      message: "Welcome to BookIt😂😂👈👈",
     });
   }
 );
 
 // UnKnown Routes
-app.all('*', (req: Request, res: Response, next: NextFunction) => {
+app.all("*", (req: Request, res: Response, next: NextFunction) => {
   const err = new Error(`Route ${req.originalUrl} not found`) as any;
   err.statusCode = 404;
   next(err);
@@ -54,7 +56,7 @@ app.all('*', (req: Request, res: Response, next: NextFunction) => {
 
 // Global Error Handler
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
-  err.status = err.status || 'error';
+  err.status = err.status || "error";
   err.statusCode = err.statusCode || 500;
 
   res.status(err.statusCode).json({
@@ -63,7 +65,7 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-const port = config.get<number>('port');
+const port = config.get<number>("port");
 app.listen(port, () => {
   console.log(`Server started on port: ${port}`);
   // 👇 call the connectDB function here
