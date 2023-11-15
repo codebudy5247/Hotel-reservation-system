@@ -11,11 +11,11 @@ import { restrictTo } from "../middleware/restrictTo";
 
 const router = express.Router();
 
+router.get('/',findAllHotelsHandler)
+
 router.use(deserializeUser, requireUser);
 
-router
-  .route("/")
-  .get(findAllHotelsHandler)
-  .post(restrictTo("admin"), validate(createHotelSchema), createHotelHandler);
+router.post('/',restrictTo("admin"), validate(createHotelSchema), createHotelHandler)
+
 
 export default router;
