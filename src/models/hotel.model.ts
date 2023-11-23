@@ -57,7 +57,7 @@ export class Hotel {
   @prop({ required: true })
   price:string
 
-  @prop({ required: true}) 
+  @prop({ required: true,type: () => String}) 
   images: string[];
 
   @prop({ required: true })
@@ -69,7 +69,7 @@ export class Hotel {
   @prop({ type: () => String, enum: Object.values(Amenities) })
   amenities:string[]
 
-  @prop({ required: true}) 
+  @prop({ required: true,type: () => String}) 
   policies:string[]
 
   // @prop({ required: true}) 
