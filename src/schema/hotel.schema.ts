@@ -11,7 +11,6 @@ export const createHotelSchema = object({
       country: string({ required_error: "Country is required" }),
     }),
     price: string({ required_error: "Name is required" }),
-    yearOpened: string({ required_error: "Year of opening is required" }),
     images: string({ required_error: "Image is required" })
       .array()
       .min(1)
@@ -45,7 +44,6 @@ export const updateHotelSchema = object({
       street: string({ required_error: "Street is required" }),
       country: string({ required_error: "Country is required" }),
     }),
-    yearOpened: string({ required_error: "Year of opening is required" }),
     images: string({ required_error: "Image is required" }),
     description: string({
       required_error: "Description should be at least 120 characters long ",

@@ -9,7 +9,6 @@ export const hotels = [
       country: "india",
     },
     price: "499",
-    yearOpened: "1997",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/111407/large/6fb377cf3b963371.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/111407/large/1106543730a36897.jpg",
@@ -19,7 +18,6 @@ export const hotels = [
     amenities: [
         "WiFi",
         "AC",
-        "Free Wifi",
         "Kitchen",
         "TV",
         "Geyser",
@@ -45,7 +43,6 @@ export const hotels = [
         country: "india",
     },
     price: "579",
-    yearOpened: "1977",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/104761/large/b2d5416045a9b794.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/104761/large/b7fa411437dc0360.jpg"
@@ -54,7 +51,6 @@ export const hotels = [
     amenities: [
         "WiFi",
         "AC",
-        "Free Wifi",
         "Kitchen",
         "TV",
     ],
@@ -76,7 +72,6 @@ export const hotels = [
         country: "india",
     },
     price: "1065",
-    yearOpened: "1997",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/106719/large/c64c9166ac4a8e31.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/106719/large/e7e279dec2cb86b9.jpg",
@@ -109,7 +104,6 @@ export const hotels = [
         country: "india",
     },
     price: "1150",
-    yearOpened: "1233",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/2271/large/4d285b01781c685d.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/2271/large/9263c1b6168953a9.jpg",
@@ -120,7 +114,6 @@ export const hotels = [
     amenities: [
         "WiFi",
         "AC",
-        "Free Wifi",
         "Security"
     ],
     policies: [
@@ -141,7 +134,6 @@ export const hotels = [
         country: "india",
     },
     price: "454",
-    yearOpened: "1876",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/172212/large/1f3569f5bbc6564d.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/172212/large/71f10ddac187b401.jpg"
@@ -150,7 +142,6 @@ export const hotels = [
     amenities: [
         "WiFi",
         "AC",
-        "Free Wifi",
         "Kitchen",
         "TV",
         "Geyser",
@@ -176,7 +167,6 @@ export const hotels = [
         country: "india",
     },
     price: "3279",
-    yearOpened: "1990",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/2633/large/8d9fb49c24b93255.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/2633/large/5cb2b4b3f0e09e97.jpg",
@@ -186,7 +176,6 @@ export const hotels = [
     amenities: [
         "WiFi",
         "AC",
-        "Free Wifi",
         "Geyser",
         "Power backup",
         "Elevator",
@@ -210,7 +199,6 @@ export const hotels = [
         country: "india",
     },
     price: "2912",
-    yearOpened: "2000",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/104516/large/4b510bb667b48bb4.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/104516/large/9d35f1ce545dc524.jpg",
@@ -221,7 +209,6 @@ export const hotels = [
     amenities: [
         "WiFi",
         "AC",
-        "Free Wifi",
         "Kitchen",
         "TV",
         "Geyser",
@@ -247,7 +234,6 @@ export const hotels = [
         country: "india",
     },
     price: "2060",
-    yearOpened: "2008",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/112096/large/282ba426f45a9acd.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/112096/large/8637e41ffefdf1a6.jpg"
@@ -256,7 +242,6 @@ export const hotels = [
     amenities: [
         "WiFi",
         "AC",
-        "Free Wifi",
         "Security"
     ],
     policies: [
@@ -277,7 +262,6 @@ export const hotels = [
         country: "india",
     },
     price: "2060",
-    yearOpened: "2020",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/18616/large/b50ae3f1cf28e829.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/18616/large/f6b6060ef3189306.jpg",
@@ -310,7 +294,6 @@ export const hotels = [
         country: "india",
     },
     price: "4017",
-    yearOpened: "2024",
     images: [
         "https://images.oyoroomscdn.com/uploads/hotel_image/112689/large/417e8d31677997e6.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/112689/large/2d88d28f3b2b33d5.jpg",
@@ -320,8 +303,6 @@ export const hotels = [
     amenities: [
         "WiFi",
         "AC",
-        "Free Wifi",
-        "Kitchen",
         "TV",
         "Geyser",
         "Power backup",

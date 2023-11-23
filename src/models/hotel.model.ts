@@ -8,6 +8,40 @@ import {
   Ref,
 } from "@typegoose/typegoose";
 
+//Location {Sub document}
+class Location {
+  @prop({ type: () => String })
+  state: string;
+
+  @prop({ type: () => String })
+  city: string;
+
+  @prop({ type: () => String })
+  zip: string;
+
+  @prop({ type: () => String })
+  street: string;
+
+  @prop({ type: () => String })
+  country: string;
+}
+
+enum Amenities {
+  wifi = "wifi",
+  kitchen = "kitchen",
+  ac = "ac",
+  tv = "tv",
+  geyser = "geyser",
+  powerBackup = "powerBackup",
+  elevator = "elevator",
+  security = "security",
+  laundry="laundry",
+  freeParking="freeParking",
+  gym="gym",
+  evCharger="evCharger"
+}
+
+
 @modelOptions({
   schemaOptions: {
     timestamps: true,
@@ -17,20 +51,11 @@ export class Hotel {
   @prop({ required: true, unique: true })
   name: string;
 
-  @prop({ required: true, unique: true })
-  location: {
-    state: string;
-    city: string;
-    zip: string;
-    street: string;
-    country:string
-  };
+  @prop({ type: () => Location })
+  location: Location;
   
   @prop({ required: true })
   price:string
-
-  @prop({ required: true })
-  yearOpened:string
 
   @prop({ required: true}) 
   images: string[];
@@ -41,7 +66,7 @@ export class Hotel {
   @prop({ default: 0 })
   rating?: number;
 
-  @prop({ required: true}) 
+  @prop({ type: () => String, enum: Object.values(Amenities) })
   amenities:string[]
 
   @prop({ required: true}) 
