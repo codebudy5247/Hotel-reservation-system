@@ -16,14 +16,14 @@ export const hotels = [
     ],
     description: "The Flagship Hotel Olive Saffron is a grand hotel located in Delhi, close to India Gate and the Red Fort. With comfortable stays at affordable prices, the hotel has become a destination for both business travellers and tourists.",
     amenities: [
-        "WiFi",
-        "AC",
-        "Kitchen",
-        "TV",
-        "Geyser",
-        "Power backup",
-        "Elevator",
-        "Security"
+        "wifi",
+        "ac",
+        "kitchen",
+        "tv",
+        "geyser",
+        "powerBackup",
+        "elevator",
+        "security"
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
@@ -49,10 +49,10 @@ export const hotels = [
     ],
     description: "Dream Town is a budget hotel with standardised amenities at the best value. The property is situated 11 km from India Gate and 8 km from Red Fort. The Superior check-in experience assures that you will be taken care of and your needs met.",
     amenities: [
-        "WiFi",
-        "AC",
-        "Kitchen",
-        "TV",
+      "wifi",
+      "ac",
+      "kitchen",
+      "tv",
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
@@ -80,11 +80,11 @@ export const hotels = [
     ],
     description: "Did you know that we’ve got 2.5 Crore bookings since March 2020? And this is all thanks to the sanitisation & safety measures followed at our properties, from disinfecting surfaces with high-quality cleaning products and maintaining social distance to using protective gear and more.",
     amenities: [
-        "WiFi",
-        "AC",
-        "Power backup",
-        "Elevator",
-        "Security"
+      "wifi",
+      "geyser",
+      "powerBackup",
+      "elevator",
+      "security"
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
@@ -112,9 +112,10 @@ export const hotels = [
     ],
     description: "Did you know that we’ve got 2.5 Crore bookings since March 2020? And this is all thanks to the sanitisation & safety measures followed at our properties, from disinfecting surfaces with high-quality cleaning products and maintaining social distance to using protective gear and more.",
     amenities: [
-        "WiFi",
-        "AC",
-        "Security"
+      "wifi",
+      "ac",
+      "kitchen",
+      "security"
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
@@ -140,14 +141,9 @@ export const hotels = [
     ],
     description: "GC International is a budget hotel in Hyderabad. The hotel offers standardised amenities at the best value.Distance in property description is calculated using © OpenStreetMap",
     amenities: [
-        "WiFi",
-        "AC",
-        "Kitchen",
-        "TV",
-        "Geyser",
-        "Power backup",
-        "Elevator",
-        "Security"
+      "wifi",
+      "elevator",
+      "security"
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
@@ -174,12 +170,10 @@ export const hotels = [
     ],
     description: "The rooms are spacious. Bright colours on the walls add a glow to the overall decor of the room. Provision of basic amenities and comfortable wooden furniture make for a relaxing stay. There are a seating and dining area where guests can relax and enjoy their meals.3279",
     amenities: [
-        "WiFi",
-        "AC",
-        "Geyser",
-        "Power backup",
-        "Elevator",
-        "Security"
+      "wifi",
+      "powerBackup",
+      "elevator",
+      "security"
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
@@ -207,14 +201,14 @@ export const hotels = [
     ],
     description: "The rooms have beds with various options such as single beds, twin-single beds, queen-size beds and king-size beds along with bathrooms, TV, AC, fan and a centre table. Some additional facilities provided by this place are an in-house restaurant, complimentary breakfast, seating area, power backup, 24X7 check-in, intercom, mini-fridge, coffee/tea maker, CCTV cameras, security, card payment, daily housekeeping and reception.",
     amenities: [
-        "WiFi",
-        "AC",
-        "Kitchen",
-        "TV",
-        "Geyser",
-        "Power backup",
-        "Elevator",
-        "Security"
+      "wifi",
+      "ac",
+      "kitchen",
+      "tv",
+      "geyser",
+      "powerBackup",
+      "elevator",
+      "security"
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
@@ -240,9 +234,12 @@ export const hotels = [
     ],
     description: "Janapriya Lodge is a budget hotel located in Bangalore, 10 km from Lalbagh Botanical Garden and 8 km from Cubbon Park. With amenities like CCTV cameras, parking facility and breakfast services, this hotel ensures that you have a comfortable stay at an affordable price.",
     amenities: [
-        "WiFi",
-        "AC",
-        "Security"
+      "wifi",
+      "ac",
+      "kitchen",
+      "tv",
+      "elevator",
+      "security"
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
@@ -269,12 +266,10 @@ export const hotels = [
     ],
     description: "Hotel Aaira Inn is located on 1, 3rd Cross Road, Ramaswamipalya, near Banaswadi Fire Station. It is a short drive away from Banaswadi Railway Station, Sri Someshwara Swamy Temple, Bangalore Palace, Lumbini Gardens, and Fun World Amusement Park.",
     amenities: [
-        "WiFi",
-        "TV",
-        "Geyser",
-        "Power backup",
-        "Elevator",
-        "Security"
+      "wifi",
+      "powerBackup",
+      "elevator",
+      "security"
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
@@ -301,11 +296,11 @@ export const hotels = [
     ],
     description: "Featuring a range of amenities, from CCTV Cameras to In-house restaurant, Townhouse OAK White Inn is the perfect spot for you to spend your next vacation. With an affordable price tag and exceeding guest expectations with every stay, this is the only place you need to go.",
     amenities: [
-        "WiFi",
-        "AC",
-        "TV",
-        "Geyser",
-        "Power backup",
+      "wifi",
+      "ac",
+      "kitchen",
+      "tv",
+      "geyser",
     ],
     policies: [
         "Check-in allowed for guests aged 21 years and above only",
