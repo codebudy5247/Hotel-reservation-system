@@ -3,15 +3,17 @@ import express, { NextFunction, Request, Response } from "express";
 import morgan from "morgan";
 import config from "config";
 import cors from "cors";
-import path from "path";
+import swaggerDocs from "./utils/swagger";
 import cookieParser from "cookie-parser";
 import connectDB from "./utils/connectDB";
+import testRouter from "./routes/test.route"
 import userRouter from "./routes/user.route";
 import authRouter from "./routes/auth.route";
 import hotelRouter from "./routes/hotel.route";
 
 const app = express();
 
+const port = config.get<number>("port");
 // Middleware
 
 // Body Parser
@@ -32,20 +34,14 @@ app.use(
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 // Routes
+app.use("/api/healthChecker",testRouter)
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/hotel", hotelRouter);
 
-// Testing
-app.get(
-  "/api/healthChecker",
-  (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).json({
-      status: "success",
-      message: "Welcome to BookIt😂😂👈👈",
-    });
-  }
-);
+
+// Swagger Documentation
+swaggerDocs(app, port);
 
 // UnKnown Routes
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
@@ -65,9 +61,7 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-const port = config.get<number>("port");
 app.listen(port, () => {
   console.log(`Server started on port: ${port}`);
-  // 👇 call the connectDB function here
   connectDB();
 });
