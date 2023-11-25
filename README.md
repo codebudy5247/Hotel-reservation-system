@@ -6,7 +6,7 @@
 
 # BookIt API
 
-BookIt API is a project developed with ExpressJS, TypeScript, MongoDB,Redis, Typegoose, Swagger, and Docker. It serves as the backend for the [BookIt](https://talentuzz.vercl.app) an Hotel Reservation Platform, providing APIs for managing Hotels, Rooms, User Authentication and Payments.
+BookIt API is a project developed with ExpressJS, TypeScript, MongoDB,Redis, Typegoose, Swagger, and Docker. It serves as the backend for the [BookIt](https://github.com) an Hotel Reservation Platform, providing APIs for managing Hotels, Rooms, User Authentication and Payments.
 
 <div align="center">
     <a href="#-getting-started">
@@ -55,10 +55,10 @@ BookIt API is a project developed with ExpressJS, TypeScript, MongoDB,Redis, Typ
 
 ### **Project setup:**
 
-1. Clone or [fork](git@github.com:henriqgoncalvs/talentuzz-api.git) the repository:
+1. Clone or [fork](https://github.com/codebudy5247/BookIt-APIs.git) the repository:
 
 ```bash
-git@github.com:hnqg/talentuzz-api.git
+https://github.com/codebudy5247/BookIt-APIs.git
 ```
 
 2. Install the dependencies:
