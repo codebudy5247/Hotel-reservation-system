@@ -3,6 +3,7 @@ import { validate } from "../middleware/validate";
 import {
   createHotelHandler,
   findAllHotelsHandler,
+  findHotelController
 } from "../controllers/hotel.controller";
 import { createHotelSchema } from "../schema/hotel.schema";
 import { deserializeUser } from "../middleware/deserializeUser";
@@ -12,6 +13,7 @@ import { restrictTo } from "../middleware/restrictTo";
 const router = express.Router();
 
 router.get('/',findAllHotelsHandler)
+router.get('/:hotelId',findHotelController)
 
 router.use(deserializeUser, requireUser);
 
