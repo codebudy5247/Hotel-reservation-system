@@ -75,8 +75,8 @@ export class Hotel {
   // @prop({ required: true}) 
   // reviews:string
 
-  // @prop({ ref: () => Room })
-  // rooms?: Ref<Room>[];
+  @prop({ required: true,type: () => String})
+  rooms?: string[];
 }
 
 const hotelModel = getModelForClass(Hotel);
