@@ -6,15 +6,21 @@ enum RoomType {
   suite = "suite",
 }
 
+//Location {Sub document}
+class RoomNumbers {
+  @prop({ type: () => Number })
+  roomNumber: number;
+
+  @prop({ required: true, type: () => Date })
+  unavailableDates?: Date[];
+}
+
 @modelOptions({
   schemaOptions: {
     timestamps: true,
   },
 })
 export class Room {
-  @prop({ required: true, unique: true })
-  roomNumber: string;
-
   @prop({ type: () => String, enum: Object.values(RoomType) })
   roomType: string;
 
@@ -26,6 +32,9 @@ export class Room {
 
   @prop({ required: true })
   description?: string;
+
+  @prop({ type: () => RoomNumbers })
+  roomNumbers: Array<RoomNumbers>;
 }
 
 const roomModel = getModelForClass(Room);
