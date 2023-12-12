@@ -5,7 +5,7 @@ import {
   findAllHotels,
 } from "../services/hotel.service";
 
-import { CreateHotelInput,ParamsInput } from "../schema/hotel.schema";
+import { CreateHotelInput,HotelParamsInput } from "../schema/hotel.schema";
 
 // Create hotel
 export const createHotelHandler = async (
@@ -55,7 +55,7 @@ export const findAllHotelsHandler = async (
 
 // Get hotel by ID
 export const findHotelController = async (
-  req: Request<ParamsInput>,
+  req: Request<HotelParamsInput>,
   res: Response,
   next: NextFunction
 ) => {

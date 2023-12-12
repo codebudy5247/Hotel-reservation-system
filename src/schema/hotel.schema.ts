@@ -56,7 +56,7 @@ export const filterQuery = object({
   page: number().default(10),
 });
 
-export type ParamsInput = TypeOf<typeof params>;
+export type HotelParamsInput = TypeOf<typeof params>;
 export type FilterQueryInput = TypeOf<typeof filterQuery>;
 export type CreateHotelInput = TypeOf<typeof createHotelSchema>["body"];
 export type UpdateHotelInput = TypeOf<typeof updateHotelSchema>;
