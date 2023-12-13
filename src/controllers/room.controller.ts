@@ -3,6 +3,7 @@ import {
   createRoom,
   findRoomById,
   addRoomToHotel,
+  findAllRooms
 } from "../services/room.service";
 
 import { CreateRoomInput, RoomParamsInput } from "../schema/room.schema";
@@ -38,3 +39,52 @@ export const createRoomHandler = async (
 };
 
 // Find room by ID
+export const findRoomController = async (
+  req: Request<RoomParamsInput>,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const room = await findRoomById(req.params.roomId);
+    if (!room) {
+      return res.status(404).json({
+        status: "fail",
+        message: "Room with that ID not found",
+      });
+    }
+    res.status(200).json({
+      status: "success",
+      data: {
+        room,
+      },
+    });
+  } catch (err: any) {
+    next(err);
+  }
+};
+
+// Get list of all rooms
+export const findAllRoomsHandler = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const rooms = await findAllRooms();
+    res.status(200).json({
+      status: "success",
+      result: rooms.length,
+      data: {
+        rooms,
+      },
+    });
+  } catch (err: any) {
+    next(err);
+  }
+};
+
+// Update room
+
+// Update room availablity
+
+// Delete room
