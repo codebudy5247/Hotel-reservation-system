@@ -2,18 +2,19 @@ import express from "express";
 import { validate } from "../middleware/validate";
 import {
   createRoomHandler,
-  findRoomController,
+  findRoomHandler,
   findAllRoomsHandler,
+  updateRoomHandler,
 } from "../controllers/room.controller";
-import { createRoomSchema } from "../schema/room.schema";
+import { createRoomSchema, updateRoomSchema } from "../schema/room.schema";
 import { deserializeUser } from "../middleware/deserializeUser";
 import { requireUser } from "../middleware/requireUser";
 import { restrictTo } from "../middleware/restrictTo";
 
 const router = express.Router();
 
-router.get('/',findAllRoomsHandler)
-router.get('/:roomId',findRoomController)
+router.get("/", findAllRoomsHandler);
+router.get("/:roomId", findRoomHandler);
 
 router.use(deserializeUser, requireUser);
 
@@ -22,6 +23,13 @@ router.post(
   restrictTo("admin"),
   validate(createRoomSchema),
   createRoomHandler
+);
+
+router.put(
+  "/:roomId",
+  restrictTo("admin"),
+  validate(updateRoomSchema),
+  updateRoomHandler
 );
 
 export default router;

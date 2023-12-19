@@ -3,10 +3,15 @@ import {
   createRoom,
   findRoomById,
   addRoomToHotel,
-  findAllRooms
+  findAllRooms,
+  findAndUpdateRoom,
 } from "../services/room.service";
 
-import { CreateRoomInput, RoomParamsInput } from "../schema/room.schema";
+import {
+  CreateRoomInput,
+  RoomParamsInput,
+  UpdateRoomInput,
+} from "../schema/room.schema";
 import { HotelParamsInput } from "../schema/hotel.schema";
 
 // Create Room
@@ -39,7 +44,7 @@ export const createRoomHandler = async (
 };
 
 // Find room by ID
-export const findRoomController = async (
+export const findRoomHandler = async (
   req: Request<RoomParamsInput>,
   res: Response,
   next: NextFunction
@@ -84,6 +89,39 @@ export const findAllRoomsHandler = async (
 };
 
 // Update room
+export async function updateRoomHandler(
+  req: Request<UpdateRoomInput["params"], {}, UpdateRoomInput["body"]>,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const { roomNumber, roomType, maxPeople, price, description } = req.body;
+
+    const roomId = req.params.roomId;
+
+    const updatedRoom = await findAndUpdateRoom(roomId, {
+      roomNumber,
+      roomType,
+      maxPeople,
+      price,
+      description,
+    });
+    if (!updatedRoom) {
+      return res.status(404).json({
+        status: "fail",
+        message: "Room with that ID not found",
+      });
+    }
+    res.status(200).json({
+      status: "success",
+      data: {
+        updatedRoom,
+      },
+    });
+  } catch (err: any) {
+    next(err);
+  }
+}
 
 // Update room availablity
 
