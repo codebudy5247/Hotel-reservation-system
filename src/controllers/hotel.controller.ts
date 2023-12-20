@@ -68,12 +68,7 @@ export const findHotelController = async (
         message: "Hotel with that ID not found",
       });
     }
-    res.status(200).json({
-      status: "success",
-      data: {
-        hotel,
-      },
-    });
+    res.status(200).json(hotel);
   } catch (err: any) {
     next(err);
   }
