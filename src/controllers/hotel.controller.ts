@@ -5,7 +5,8 @@ import {
   findAllHotels,
 } from "../services/hotel.service";
 
-import { CreateHotelInput,HotelParamsInput } from "../schema/hotel.schema";
+import { CreateHotelInput, HotelParamsInput } from "../schema/hotel.schema";
+import { findRoomById } from "../services/room.service";
 
 // Create hotel
 export const createHotelHandler = async (
@@ -73,6 +74,33 @@ export const findHotelController = async (
         hotel,
       },
     });
+  } catch (err: any) {
+    next(err);
+  }
+};
+
+// Get hotel rooms
+export const getHotelRooms = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const hotel = await findHotelById(req.params.hotelId);
+    if (!hotel) {
+      return res.status(404).json({
+        status: "fail",
+        message: "Hotel with that ID not found",
+      });
+    }
+    const roomIds = hotel.rooms || [];
+
+    const list = await Promise.all(
+      roomIds.map((roomId) => {
+        return findRoomById(roomId);
+      })
+    );
+    res.status(200).json(list);
   } catch (err: any) {
     next(err);
   }
