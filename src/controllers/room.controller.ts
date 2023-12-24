@@ -5,6 +5,7 @@ import {
   addRoomToHotel,
   findAllRooms,
   findAndUpdateRoom,
+  updateRoomAvailability,
 } from "../services/room.service";
 
 import {
@@ -124,5 +125,20 @@ export async function updateRoomHandler(
 }
 
 // Update room availablity
+export async function updateRoomAvailabilityHandler(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const roomId = req.params.id;
+    await updateRoomAvailability(roomId, req.body.dates);
+    res.status(200).json({
+      status: "success",
+    });
+  } catch (err: any) {
+    next(err);
+  }
+}
 
 // Delete room

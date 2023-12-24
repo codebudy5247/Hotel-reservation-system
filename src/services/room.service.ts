@@ -33,15 +33,7 @@ export async function deleteRoom(query: FilterQuery<Room>) {
   return roomModel.deleteOne(query);
 }
 
-/**
- * The function adds a new room to a hotel by updating the hotel document in the database.
- * @param {string} hotelId - The hotelId parameter is a string that represents the unique identifier of
- * the hotel to which the new room will be added.
- * @param newRoom - The `newRoom` parameter is the ID of the new room that you want to add to the
- * hotel. It should be of type `Types.ObjectId`, which is typically a unique identifier for documents
- * in a MongoDB database.
- * @returns the result of the `findOneAndUpdate` operation performed on the `hotelModel`.
- */
+// Add rooms to hotel
 export async function addRoomToHotel(hotelId: string, newRoom: Types.ObjectId) {
   return hotelModel.findOneAndUpdate(
     { _id: hotelId },
@@ -50,4 +42,19 @@ export async function addRoomToHotel(hotelId: string, newRoom: Types.ObjectId) {
     },
     { new: true }
   );
+}
+
+// Update the room availability
+export async function updateRoomAvailability(
+  roomId: string,
+  unavailableDates: Date[]
+) {
+   return roomModel.updateOne(
+    { "roomNumbers._id": roomId },
+    {
+      $push: {
+        "roomNumbers.$.unavailableDates": unavailableDates
+      },
+    }
+  )
 }
