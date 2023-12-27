@@ -11,6 +11,7 @@ import userRouter from "./routes/user.route";
 import authRouter from "./routes/auth.route";
 import hotelRouter from "./routes/hotel.route";
 import roomRouter from "./routes/room.route"
+import bookingRouter from "./routes/booking.route"
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/hotel", hotelRouter);
 app.use("/api/room", roomRouter);
+app.use("/api/booking", bookingRouter);
 
 
 // Swagger Documentation
