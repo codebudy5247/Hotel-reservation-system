@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://talentuzz.vercel.app">
+<a href="">
 <img src="./banner.png">
 </a>
 </div>
@@ -37,17 +37,14 @@ BookIt API is a project developed with ExpressJS, TypeScript, MongoDB,Redis, Typ
 ## ✨ Features
 
 - [x] ```User authentication and authorization: ```Allow users to create accounts and log in securely.
-- [ ] ```Search Functionality:``` Enable users to search for hotels based on criteria like location, dates, room type, amenities, etc.
+- [x] ```Search Functionality:``` Enable users to search for hotels based on criteria like location, dates, room type, amenities, etc.
 - [x] ```Room Availability:``` Display available rooms for specific dates.
 - [x] ```Room Selection:``` Allow users to choose specific rooms based on preferences.
 - [x] ```Multiple Room Types & Rates:``` Display various room types (standard, deluxe, suite, etc.) with respective rates.
 - [ ] ```Payment Gateway Integration:``` Secure handling of payments, including credit/debit cards, online transactions, etc.
 - [x] ```Guest Profiles:``` Maintain profiles with guest details for future bookings.
-- [ ] ```Booking Confirmation and Notifications:``` Sends automated emails or messages confirming reservations, payment, and other updates.
 - [ ] ```Feedback and Review System:``` Collects guest feedback for improving services.
 - [ ] ```Cancellation and Modification:``` Allow users to cancel or modify their bookings within specified terms and conditions.
-- [ ] ```Dashboard Overview:``` Provide an overview of bookings, revenue, occupancy rates, etc.
-- [ ] ```Booking Management:``` Allow admins to manage bookings, including cancellations or modifications.
 - [ ] Admin user Management
 - [ ] API documentation with Swagger
 
