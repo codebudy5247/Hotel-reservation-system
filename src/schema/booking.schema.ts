@@ -8,9 +8,6 @@ export const createBookingSchema = object({
     hotel: string({
       required_error: "Price is required ",
     }),
-    user: string({
-      required_error: "User is required",
-    }),
     selectedRoomType: string({
       required_error: "Room Type is required",
     }),

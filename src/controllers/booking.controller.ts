@@ -4,13 +4,23 @@ import { CreateBookingInput } from "../schema/booking.schema";
 
 // Create a new booking
 export const createBookingHandler = async (
-  req: Request<{}, {}, CreateBookingInput>,
+  req: Request<{}, {}, CreateBookingInput & { userId: string }>,
   res: Response,
   next: NextFunction
 ) => {
   try {
     const body = req.body;
-    const booking = await createBooking(body);
+    const user = res.locals.user;
+
+    if (!user) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    const bookingData: CreateBookingInput & { user: string } = {
+      ...body,
+      user: user._id,
+    };
+
+    const booking = await createBooking(bookingData);
 
     res.status(201).json({
       status: "success",
