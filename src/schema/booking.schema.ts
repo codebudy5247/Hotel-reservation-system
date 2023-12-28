@@ -14,4 +14,10 @@ export const createBookingSchema = object({
   }),
 });
 
+export const params = object({
+  bookingId: string(),
+});
+
+
 export type CreateBookingInput = TypeOf<typeof createBookingSchema>["body"];
+export type BookingParamsInput = TypeOf<typeof params>;

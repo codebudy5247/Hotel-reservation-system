@@ -6,6 +6,7 @@ import { restrictTo } from "../middleware/restrictTo";
 import {
   createBookingHandler,
   findAllBookingsHandler,
+  findBookingHandler,
 } from "../controllers/booking.controller";
 import { createBookingSchema } from "../schema/booking.schema";
 
@@ -14,6 +15,7 @@ const router = express.Router();
 router.use(deserializeUser, requireUser);
 
 router.post("/", validate(createBookingSchema), createBookingHandler);
+router.get("/:bookingId", findBookingHandler);
 router.get("/", restrictTo("admin"), findAllBookingsHandler);
 
 export default router;
