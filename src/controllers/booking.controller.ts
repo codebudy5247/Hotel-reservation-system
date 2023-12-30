@@ -87,5 +87,14 @@ export const findBookingHandler = async (
 };
 
 // Create a payment intent
-
-
+export async function createPaymentIntentHandler(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    
+  } catch (err: any) {
+    next(err);
+  }
+}
