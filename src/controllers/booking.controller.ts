@@ -9,6 +9,7 @@ import {
   BookingParamsInput,
 } from "../schema/booking.schema";
 import Stripe from "stripe";
+import { log } from "util";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
@@ -141,4 +142,34 @@ export async function createPaymentIntentHandler(
 }
 
 // Retrieve a payment intent
+export async function retrievePaymentIntentHandler(
+  req: Request<BookingParamsInput>,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const { paymentIntentId } = req.body;
+    const paymentIntent = await stripe.paymentIntents.retrieve(
+      paymentIntentId as string
+    );
 
+    if (!paymentIntent) {
+      return res.status(400).json({ message: "payment intent not found" });
+    }
+
+    if (paymentIntent.metadata.bookingId !== req.params.bookingId) {
+      return res.status(400).json({ message: "payment intent mismatch" });
+    }
+
+    if (paymentIntent.status !== "succeeded") {
+      return res.status(400).json({
+        message: `payment intent not succeeded`,
+        Status: paymentIntent.status,
+      });
+    }
+
+    // Update booking payment status
+  } catch (err: any) {
+    next(err);
+  }
+}
