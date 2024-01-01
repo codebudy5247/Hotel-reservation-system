@@ -7,6 +7,7 @@ import {
   createBookingHandler,
   findAllBookingsHandler,
   findBookingHandler,
+  createPaymentIntentHandler
 } from "../controllers/booking.controller";
 import { createBookingSchema } from "../schema/booking.schema";
 
@@ -16,6 +17,7 @@ router.use(deserializeUser, requireUser);
 
 router.post("/", validate(createBookingSchema), createBookingHandler);
 router.get("/:bookingId", findBookingHandler);
+router.post("/:bookingId/payment",createPaymentIntentHandler)
 router.get("/", restrictTo("admin"), findAllBookingsHandler);
 
 export default router;
