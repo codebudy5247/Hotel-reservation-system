@@ -8,8 +8,9 @@ import {
   CreateBookingInput,
   BookingParamsInput,
 } from "../schema/booking.schema";
+import { HotelParamsInput } from "../schema/hotel.schema";
+import { findHotelById } from "../services/hotel.service";
 import Stripe from "stripe";
-import { log } from "util";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
@@ -91,23 +92,23 @@ export const findBookingHandler = async (
 
 // Create a payment intent
 export async function createPaymentIntentHandler(
-  req: Request<BookingParamsInput>,
+  req: Request<HotelParamsInput>,
   res: Response,
   next: NextFunction
 ) {
   try {
     const { totalAmount } = req.body;
-    const bookingId = req.params.bookingId;
+    const hotelId = req.params.hotelId;
     const user = res.locals.user;
 
     if (!user) {
       return res.status(401).json({ error: "Unauthorized" });
     }
-    const booking = await findBookingById(bookingId);
-    if (!booking) {
+    const hotel = await findHotelById(hotelId);
+    if (!hotel) {
       return res.status(404).json({
         status: "fail",
-        message: "Booking with that ID not found",
+        message: "Hotel with that ID not found",
       });
     }
 
@@ -115,7 +116,7 @@ export async function createPaymentIntentHandler(
       amount: totalAmount * 100, // Convert INR to paise
       currency: "inr",
       metadata: {
-        bookingId,
+        hotelId,
         userId: user._id,
       },
     });
@@ -130,7 +131,7 @@ export async function createPaymentIntentHandler(
     res.status(200).json({
       status: "success",
       data: {
-        bookingId,
+        hotelId,
         paymentIntentId: paymentIntent.id,
         clientSecret: paymentIntent.client_secret.toString(),
         totalAmount,
