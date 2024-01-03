@@ -1,5 +1,16 @@
 import { getModelForClass, modelOptions, prop } from "@typegoose/typegoose";
 
+class Payment {
+  @prop({ type: () => String })
+  paymentIntentId: string;
+
+  @prop({ type: () => String })
+  clientSecret: string;
+
+  @prop({ type: () => Boolean })
+  paymentStatus: boolean;
+}
+
 @modelOptions({
   schemaOptions: {
     timestamps: true,
@@ -24,8 +35,8 @@ export class Booking {
   @prop({ required: true })
   selectedRoomType: string;
 
-  @prop({ required: true, default: false })
-  paymentStatus?: boolean;
+  @prop({ type: () => Payment })
+  payment: Payment;
 }
 
 const bookingModel = getModelForClass(Booking);

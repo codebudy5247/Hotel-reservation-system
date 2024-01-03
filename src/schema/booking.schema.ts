@@ -1,4 +1,4 @@
-import { object, number, string, TypeOf, date } from "zod";
+import { object, number, string, TypeOf, boolean } from "zod";
 
 export const createBookingSchema = object({
   body: object({
@@ -10,6 +10,11 @@ export const createBookingSchema = object({
     }),
     selectedRoomType: string({
       required_error: "Room Type is required",
+    }),
+    payment: object({
+      paymentIntentId: string({ required_error: "Payment Intent Id is required" }),
+      clientSecret: string({ required_error: "Client Secret is required" }),
+      paymentStatus: boolean({ required_error: "Payment Status is required" }),
     }),
   }),
 });
