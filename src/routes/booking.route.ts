@@ -14,11 +14,12 @@ import { createBookingSchema } from "../schema/booking.schema";
 
 const router = express.Router();
 
+router.post("/:hotelId/payment",createPaymentIntentHandler)
+
 router.use(deserializeUser, requireUser);
 
 router.post("/", validate(createBookingSchema), createBookingHandler);
 router.get("/:bookingId", findBookingHandler);
-router.post("/:hotelId/payment",createPaymentIntentHandler)
 router.post("/:bookingId/payment/retrieve",retrievePaymentIntentHandler)
 router.get("/", restrictTo("admin"), findAllBookingsHandler);
 

@@ -99,11 +99,6 @@ export async function createPaymentIntentHandler(
   try {
     const { totalAmount } = req.body;
     const hotelId = req.params.hotelId;
-    const user = res.locals.user;
-
-    if (!user) {
-      return res.status(401).json({ error: "Unauthorized" });
-    }
     const hotel = await findHotelById(hotelId);
     if (!hotel) {
       return res.status(404).json({
@@ -117,7 +112,6 @@ export async function createPaymentIntentHandler(
       currency: "inr",
       metadata: {
         hotelId,
-        userId: user._id,
       },
     });
 
