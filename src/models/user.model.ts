@@ -31,7 +31,7 @@ export class User {
   @prop({ unique: true, required: true })
   email: string;
 
-  @prop({default:'https://mui.com/static/images/avatar/2.jpg'})
+  @prop({default:'https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_3.jpg'})
   avatar:string
 
   @prop({ required: true, minlength: 8, maxLength: 32, select: false })
