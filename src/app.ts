@@ -3,6 +3,7 @@ import express, { NextFunction, Request, Response } from "express";
 import morgan from "morgan";
 import config from "config";
 import cors from "cors";
+import { v2 as cloudinary } from "cloudinary";
 import swaggerDocs from "./utils/swagger";
 import cookieParser from "cookie-parser";
 import connectDB from "./utils/connectDB";
@@ -14,6 +15,12 @@ import roomRouter from "./routes/room.route"
 import bookingRouter from "./routes/booking.route"
 
 const app = express();
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const port = config.get<number>("port");
 // Middleware

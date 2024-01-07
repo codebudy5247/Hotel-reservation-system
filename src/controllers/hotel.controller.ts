@@ -4,9 +4,9 @@ import {
   findHotelById,
   findAllHotels,
 } from "../services/hotel.service";
-
 import { CreateHotelInput, HotelParamsInput } from "../schema/hotel.schema";
 import { findRoomById } from "../services/room.service";
+import cloudinary from "cloudinary";
 
 // Create hotel
 export const createHotelHandler = async (
@@ -101,7 +101,6 @@ export const getHotelRooms = async (
   }
 };
 
-
 //test purpose
 export const testHandler = async (
   req: Request,
@@ -110,11 +109,22 @@ export const testHandler = async (
 ) => {
   try {
     const imageFiles = req.files as Express.Multer.File[];
-    res.send(imageFiles)
-
+    const imageUrls = await uploadImages(imageFiles);
+    res.send(imageUrls);
   } catch (err: any) {
     console.log(err);
     next(err);
   }
 };
 
+async function uploadImages(imageFiles: Express.Multer.File[]) {
+  const uploadPromises = imageFiles.map(async (image) => {
+    const b64 = Buffer.from(image.buffer).toString("base64");
+    let dataURI = "data:" + image.mimetype + ";base64," + b64;
+    const res = await cloudinary.v2.uploader.upload(dataURI);
+    return res.url;
+  });
+
+  const imageUrls = await Promise.all(uploadPromises);
+  return imageUrls;
+}
