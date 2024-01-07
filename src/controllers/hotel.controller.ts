@@ -100,3 +100,21 @@ export const getHotelRooms = async (
     next(err);
   }
 };
+
+
+//test purpose
+export const testHandler = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const imageFiles = req.files as Express.Multer.File[];
+    res.send(imageFiles)
+
+  } catch (err: any) {
+    console.log(err);
+    next(err);
+  }
+};
+
