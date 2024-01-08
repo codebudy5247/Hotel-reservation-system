@@ -102,7 +102,7 @@ export const getHotelRooms = async (
 };
 
 //test purpose
-export const testHandler = async (
+export const uploadImageHandler = async (
   req: Request,
   res: Response,
   next: NextFunction

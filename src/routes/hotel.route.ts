@@ -5,7 +5,7 @@ import {
   findAllHotelsHandler,
   findHotelController,
   getHotelRooms,
-  testHandler
+  uploadImageHandler
 } from "../controllers/hotel.controller";
 import { createHotelSchema } from "../schema/hotel.schema";
 import { deserializeUser } from "../middleware/deserializeUser";
@@ -18,7 +18,7 @@ router.get('/',findAllHotelsHandler)
 router.get('/:hotelId',findHotelController)
 router.get('/rooms/:hotelId',getHotelRooms)
 
-router.post('/test-upload',uploadHotelImages,testHandler)
+router.post('/upload-images',uploadHotelImages,uploadImageHandler)
 
 router.use(deserializeUser, requireUser);
 
