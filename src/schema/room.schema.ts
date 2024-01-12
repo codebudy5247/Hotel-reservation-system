@@ -8,9 +8,9 @@ export const createRoomSchema = object({
     description: string({
       required_error: "Description should be at least 120 characters long ",
     }),
-    roomNumbers: object({
-      roomNumber: number({ required_error: "Room number is required" }),
-    }).array(),
+    // roomNumbers: object({
+    //   roomNumber: number({ required_error: "Room number is required" }),
+    // }).array(),
   }),
 });
 

@@ -33,8 +33,8 @@ export class Room {
   @prop({ required: true })
   description?: string;
 
-  @prop({ type: () => RoomNumbers })
-  roomNumbers: Array<RoomNumbers>;
+  // @prop({ type: () => RoomNumbers })
+  // roomNumbers: Array<RoomNumbers>;
 }
 
 const roomModel = getModelForClass(Room);
