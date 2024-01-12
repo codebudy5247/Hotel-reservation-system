@@ -14,6 +14,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/111407/large/1106543730a36897.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/111407/large/e03414f0402f8d1c.jpg"
     ],
+    rating:"4",
     description: "The Flagship Hotel Olive Saffron is a grand hotel located in Delhi, close to India Gate and the Red Fort. With comfortable stays at affordable prices, the hotel has become a destination for both business travellers and tourists.",
     amenities: [
         "wifi",
@@ -47,6 +48,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/104761/large/b2d5416045a9b794.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/104761/large/b7fa411437dc0360.jpg"
     ],
+    rating:"5",
     description: "Dream Town is a budget hotel with standardised amenities at the best value. The property is situated 11 km from India Gate and 8 km from Red Fort. The Superior check-in experience assures that you will be taken care of and your needs met.",
     amenities: [
       "wifi",
@@ -78,6 +80,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/106719/large/25098112fc987fe2.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/106719/large/1393d641344299fc.jpg"
     ],
+    rating:"4",
     description: "Did you know that we’ve got 2.5 Crore bookings since March 2020? And this is all thanks to the sanitisation & safety measures followed at our properties, from disinfecting surfaces with high-quality cleaning products and maintaining social distance to using protective gear and more.",
     amenities: [
       "wifi",
@@ -110,6 +113,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/2271/large/d041eb1431a80d8b.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/2271/large/21ea86c6e012357c.jpg"
     ],
+    rating:"2",
     description: "Did you know that we’ve got 2.5 Crore bookings since March 2020? And this is all thanks to the sanitisation & safety measures followed at our properties, from disinfecting surfaces with high-quality cleaning products and maintaining social distance to using protective gear and more.",
     amenities: [
       "wifi",
@@ -139,6 +143,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/172212/large/1f3569f5bbc6564d.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/172212/large/71f10ddac187b401.jpg"
     ],
+    rating:"5",
     description: "GC International is a budget hotel in Hyderabad. The hotel offers standardised amenities at the best value.Distance in property description is calculated using © OpenStreetMap",
     amenities: [
       "wifi",
@@ -168,6 +173,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/2633/large/5cb2b4b3f0e09e97.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/2633/large/60d313741019d2bf.jpg"
     ],
+    rating:"5",
     description: "The rooms are spacious. Bright colours on the walls add a glow to the overall decor of the room. Provision of basic amenities and comfortable wooden furniture make for a relaxing stay. There are a seating and dining area where guests can relax and enjoy their meals.3279",
     amenities: [
       "wifi",
@@ -199,6 +205,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/104516/large/a126ffefd34e4f25.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/104516/large/c6b94cd6d2f24ce0.jpg"
     ],
+    rating:"4",
     description: "The rooms have beds with various options such as single beds, twin-single beds, queen-size beds and king-size beds along with bathrooms, TV, AC, fan and a centre table. Some additional facilities provided by this place are an in-house restaurant, complimentary breakfast, seating area, power backup, 24X7 check-in, intercom, mini-fridge, coffee/tea maker, CCTV cameras, security, card payment, daily housekeeping and reception.",
     amenities: [
       "wifi",
@@ -232,6 +239,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/112096/large/282ba426f45a9acd.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/112096/large/8637e41ffefdf1a6.jpg"
     ],
+    rating:"3",
     description: "Janapriya Lodge is a budget hotel located in Bangalore, 10 km from Lalbagh Botanical Garden and 8 km from Cubbon Park. With amenities like CCTV cameras, parking facility and breakfast services, this hotel ensures that you have a comfortable stay at an affordable price.",
     amenities: [
       "wifi",
@@ -264,6 +272,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/18616/large/f6b6060ef3189306.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/18616/large/b87220566cf979be.jpg"
     ],
+    rating:"5",
     description: "Hotel Aaira Inn is located on 1, 3rd Cross Road, Ramaswamipalya, near Banaswadi Fire Station. It is a short drive away from Banaswadi Railway Station, Sri Someshwara Swamy Temple, Bangalore Palace, Lumbini Gardens, and Fun World Amusement Park.",
     amenities: [
       "wifi",
@@ -294,6 +303,7 @@ export const hotels = [
         "https://images.oyoroomscdn.com/uploads/hotel_image/112689/large/2d88d28f3b2b33d5.jpg",
         "https://images.oyoroomscdn.com/uploads/hotel_image/112689/large/4d09e379c96ad916.jpg"
     ],
+    rating:"5",
     description: "Featuring a range of amenities, from CCTV Cameras to In-house restaurant, Townhouse OAK White Inn is the perfect spot for you to spend your next vacation. With an affordable price tag and exceeding guest expectations with every stay, this is the only place you need to go.",
     amenities: [
       "wifi",
