@@ -44,8 +44,8 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 // Routes
 app.use("/api/healthChecker",testRouter)
-app.use("/api/users", userRouter);
-app.use("/api/auth", authRouter);
+// app.use("/api/users", userRouter);
+// app.use("/api/auth", authRouter);
 app.use("/api/hotel", hotelRouter);
 app.use("/api/room", roomRouter);
 app.use("/api/booking", bookingRouter);
