@@ -25,8 +25,12 @@ jobs:
         run: |
           touch .env
           echo NODE_ENV = ${{ secrets.NODE_ENV }} >> .env
+          echo PORT = ${{ secrets.PORT }} >> .env
+          echo ORIGIN = ${{ secrets.ORIGIN }} >> .env
           echo DB_URL = ${{ secrets.DB_URL }} >> .env
           echo REDIS_URL = ${{ secrets.REDIS_URL }} >> .env
+          echo ACCESS_TOKEN_EXPIRES_IN = ${{ secrets.ACCESS_TOKEN_EXPIRES_IN }} >> .env
+          echo REFRESH_TOKEN_EXPIRES_IN = ${{ secrets.REFRESH_TOKEN_EXPIRES_IN }} >> .env
           echo ACCESS_TOKEN_PRIVATE_KEY = ${{ secrets.ACCESS_TOKEN_PRIVATE_KEY }} >> .env
           echo ACCESS_TOKEN_PUBLIC_KEY = ${{ secrets.ACCESS_TOKEN_PUBLIC_KEY }} >> .env
           echo REFRESH_TOKEN_PRIVATE_KEY = ${{ secrets.REFRESH_TOKEN_PRIVATE_KEY }} >> .env
