@@ -1,7 +1,6 @@
 require("dotenv").config();
 import express, { NextFunction, Request, Response } from "express";
 import morgan from "morgan";
-import config from "config";
 import cors from "cors";
 import { v2 as cloudinary } from "cloudinary";
 import swaggerDocs from "./utils/swagger";
@@ -22,7 +21,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const port = config.get<number>("port");
+const port = process.env.PORT
 // Middleware
 
 // Body Parser
@@ -34,7 +33,7 @@ app.use(cookieParser());
 // Cors
 app.use(
   cors({
-    origin: config.get<string>("origin"),
+    origin: process.env.ORIGIN,
     credentials: true,
   })
 );

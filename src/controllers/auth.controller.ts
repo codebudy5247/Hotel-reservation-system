@@ -1,4 +1,3 @@
-import config from "config";
 import { CookieOptions, NextFunction, Request, Response } from "express";
 import { CreateUserInput, LoginUserInput } from "../schema/user.schema";
 import {
@@ -17,18 +16,18 @@ export const excludedFields = ["password"];
 // Cookie options
 const accessTokenCookieOptions: CookieOptions = {
   expires: new Date(
-    Date.now() + config.get<number>("accessTokenExpiresIn") * 60 * 1000
+    Date.now() + process.env.ACCESS_TOKEN_EXPIRES_IN * 60 * 1000
   ),
-  maxAge: config.get<number>("accessTokenExpiresIn") * 60 * 1000,
+  maxAge: process.env.ACCESS_TOKEN_EXPIRES_IN * 60 * 1000,
   httpOnly: true,
   sameSite: "lax",
 };
 
 const refreshTokenCookieOptions: CookieOptions = {
   expires: new Date(
-    Date.now() + config.get<number>("refreshTokenExpiresIn") * 60 * 1000
+    Date.now() + process.env.REFRESH_TOKEN_EXPIRES_IN * 60 * 1000
   ),
-  maxAge: config.get<number>("refreshTokenExpiresIn") * 60 * 1000,
+  maxAge: process.env.REFRESH_TOKEN_EXPIRES_IN * 60 * 1000,
   httpOnly: true,
   sameSite: "lax",
 };
@@ -148,7 +147,7 @@ export const refreshAccessTokenHandler = async (
 
     // Sign new access token
     const access_token = signJwt({ sub: user._id }, "accessTokenPrivateKey", {
-      expiresIn: `${config.get<number>("accessTokenExpiresIn")}m`,
+      expiresIn: `${process.env.ACCESS_TOKEN_EXPIRES_IN}m`,
     });
 
     // Send the access token as cookie

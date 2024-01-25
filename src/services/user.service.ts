@@ -1,6 +1,5 @@
 import { omit } from 'lodash';
 import { FilterQuery, QueryOptions } from 'mongoose';
-import config from 'config';
 import userModel, { User } from '../models/user.model';
 import { excludedFields } from '../controllers/auth.controller';
 import { signJwt } from '../utils/jwt';
@@ -36,12 +35,12 @@ export const findUser = async (
 export const signToken = async (user: DocumentType<User>) => {
   // Sign the access token
   const access_token = signJwt({ sub: user._id }, 'accessTokenPrivateKey', {
-    expiresIn: `${config.get<number>('accessTokenExpiresIn')}m`,
+    expiresIn: `${process.env.ACCESS_TOKEN_EXPIRES_IN}m`,
   });
 
   // Sign the refresh token
   const refresh_token = signJwt({ sub: user._id }, 'refreshTokenPrivateKey', {
-    expiresIn: `${config.get<number>('accessTokenExpiresIn')}m`,
+    expiresIn: `${process.env.ACCESS_TOKEN_EXPIRES_IN}m`,
   });
 
   // Create a session in Redis
