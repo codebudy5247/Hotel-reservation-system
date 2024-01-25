@@ -6,6 +6,8 @@ import { signJwt } from '../utils/jwt';
 import redisClient from '../utils/connectRedis';
 import { DocumentType } from '@typegoose/typegoose';
 
+let accessTokenExpiresIn = process.env.ACCESS_TOKEN_EXPIRES_IN!
+
 // CreateUser service
 export const createUser = async (input: Partial<User>) => {
   const user = await userModel.create(input);
@@ -35,12 +37,12 @@ export const findUser = async (
 export const signToken = async (user: DocumentType<User>) => {
   // Sign the access token
   const access_token = signJwt({ sub: user._id }, 'accessTokenPrivateKey', {
-    expiresIn: `${process.env.ACCESS_TOKEN_EXPIRES_IN}m`,
+    expiresIn: `${accessTokenExpiresIn}m`,
   });
 
   // Sign the refresh token
   const refresh_token = signJwt({ sub: user._id }, 'refreshTokenPrivateKey', {
-    expiresIn: `${process.env.ACCESS_TOKEN_EXPIRES_IN}m`,
+    expiresIn: `${accessTokenExpiresIn}m`,
   });
 
   // Create a session in Redis

@@ -13,12 +13,14 @@ import { signJwt, verifyJwt } from "../utils/jwt";
 // Exclude this fields from the response
 export const excludedFields = ["password"];
 
+let accessTokenExpiresIn = process.env.ACCESS_TOKEN_EXPIRES_IN!
+
 // Cookie options
 const accessTokenCookieOptions: CookieOptions = {
   expires: new Date(
-    Date.now() + process.env.ACCESS_TOKEN_EXPIRES_IN * 60 * 1000
+    Date.now() + accessTokenExpiresIn * 60 * 1000
   ),
-  maxAge: process.env.ACCESS_TOKEN_EXPIRES_IN * 60 * 1000,
+  maxAge: accessTokenExpiresIn * 60 * 1000,
   httpOnly: true,
   sameSite: "lax",
 };
@@ -147,7 +149,7 @@ export const refreshAccessTokenHandler = async (
 
     // Sign new access token
     const access_token = signJwt({ sub: user._id }, "accessTokenPrivateKey", {
-      expiresIn: `${process.env.ACCESS_TOKEN_EXPIRES_IN}m`,
+      expiresIn: `${accessTokenExpiresIn}m`,
     });
 
     // Send the access token as cookie

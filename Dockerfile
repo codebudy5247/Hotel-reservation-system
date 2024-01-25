@@ -7,7 +7,6 @@ WORKDIR /build
 COPY package*.json .
 RUN npm install
 
-COPY config/ config/
 COPY src/ src/
 COPY tsconfig.json tsconfig.json
 
