@@ -16,7 +16,7 @@ const router = express.Router();
 router.get("/", (req: Request, res: Response, next: NextFunction) => {
   res.status(200).json({
     status: "success",
-    message: "App is up and running",
+    message: "Server is up and running",
   });
 });
 
