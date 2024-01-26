@@ -26,7 +26,7 @@ module.exports = {
         NODE_ENV: "production",
         PORT: process.env.PORT,
         ORIGIN: process.env.ORIGIN,
-        DB_URL: process.env.DB_URL,
+        DB_URL: process.env.DB_URL || "mongodb+srv://ashekhar5247:so79dEcwQUn4lSlu@cluster0.pfvuiyz.mongodb.net/?retryWrites=true&w=majority",
         REDIS_URL: process.env.REDIS_URL,
         ACCESS_TOKEN_EXPIRES_IN: process.env.ACCESS_TOKEN_EXPIRES_IN,
         REFRESH_TOKEN_EXPIRES_IN: process.env.REFRESH_TOKEN_EXPIRES_IN,
