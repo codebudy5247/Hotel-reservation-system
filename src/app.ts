@@ -41,6 +41,8 @@ app.use(
 // Logger
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
+app.use(express.static('build'))
+
 // Routes
 app.use("/api/healthChecker",testRouter)
 app.use("/api/users", userRouter);

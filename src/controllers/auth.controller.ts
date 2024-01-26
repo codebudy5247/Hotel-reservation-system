@@ -31,7 +31,7 @@ const refreshTokenCookieOptions: CookieOptions = {
   ),
   maxAge: process.env.REFRESH_TOKEN_EXPIRES_IN * 60 * 1000,
   httpOnly: true,
-  sameSite: "none", //| "lax" | "strict" | "none" | 
+  sameSite: "lax", //| "lax" | "strict" | "none" | 
 };
 
 // Only set secure to true in production
