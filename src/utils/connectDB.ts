@@ -8,7 +8,7 @@ const dbUrl = process.env.DB_URL!
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb+srv://ashekhar5247:so79dEcwQUn4lSlu@cluster0.pfvuiyz.mongodb.net/?retryWrites=true&w=majority");
+    await mongoose.connect(dbUrl);
     console.log('Database connected...');
   } catch (error: any) {
     console.log("MongoDb error",error.message);
