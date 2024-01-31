@@ -70,7 +70,7 @@ router.post('/register', validate(createUserSchema), registerHandler);
 
 router.post('/login', validate(loginUserSchema), loginHandler);
 
-router.get('/refresh', refreshAccessTokenHandler);
+router.post('/refresh', refreshAccessTokenHandler);
 
 router.use(deserializeUser, requireUser);
 

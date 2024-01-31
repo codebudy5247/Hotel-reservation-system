@@ -96,6 +96,7 @@ export const loginHandler = async (
     // Send Access Token
     res.status(200).json({
       access_token,
+      refresh_token,
       user,
     });
   } catch (err: any) {
@@ -119,8 +120,8 @@ export const refreshAccessTokenHandler = async (
 ) => {
   try {
     // Get the refresh token from cookie
-    const refresh_token = req.cookies.refresh_token as string;
-
+    // const refresh_token = req.cookies.refresh_token as string;
+    const { refresh_token } = req.body;
     // Validate the Refresh token
     const decoded = verifyJwt<{ sub: string }>(
       refresh_token,
